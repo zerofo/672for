@@ -1,0 +1,195 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+    <script src="exploit.js"></script>
+        
+    <style>
+        :root {
+            --mainColor: #0080FF;
+            --fontColor: white;
+            --attendColor: #005AB5;
+            --subColor: white;
+            --spesColor: gray
+        }
+        * {
+            text-align: center;
+            cursor: default;
+            caret-color: transparent;
+            color: var(--fontColor);
+            font-family: Raleway, Verdana, Arial;
+            text-decoration: none;
+            user-select: none;
+            z-index: 1
+        }
+        body {
+            overflow-x: hidden
+        }
+        a,
+        body,
+        div,
+        html,
+        table {
+            background-color: #000;
+            text-align: center;
+            margin: auto
+        }
+        .button {
+            padding: 26px 46px 26px 46px;
+            font-size: 50px;
+            cursor: pointer;
+            min-height: 64px;
+            display: none;
+            border-radius: 20px;
+            color: #000;
+            float: left;
+            opacity: .8;
+            background-color: var(--mainColor)
+        }
+        .webname {
+            margin: 0;
+            background-color: var(--mainColor);
+            font-size: 70px;
+            padding: 6px
+        }
+        ._HEN:hover {
+            opacity: 1;
+            color: #f5f5f5;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 50px #fff, 0 0 100px #fff, 0 0 200px #fff
+        }
+        #msgs {
+            padding: 5px;
+            min-height: 78px;
+            font-size: 35px;
+            margin-top: 1%
+        }
+        #footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            clear: both;
+            left: 0
+        }
+        @keyframes widthing {
+            0% {
+                width: 60%
+            }
+            50% {
+                width: 1%
+            }
+            100% {
+                width: 60%
+            }
+        }
+        @keyframes move {
+            0% {
+                right: -300px
+            }
+            100% {
+                right: 0
+            }
+        }
+        .lines {
+            background-color: #fff;
+            width: 60%;
+            height: 5px
+        }
+        .hiddenmenu {
+                width: 80%;
+                right: 0px;
+                height: auto;
+                margin-top: 3%;
+                background-color: transparent;
+                display: None;
+        }
+        .menudiv:hover {
+            color: #ffffff
+        }
+        .menudiv {
+            float: left;
+            cursor: pointer;
+            padding: 1%;
+            border-radius: 10px;
+            font-size: 30px;
+            margin: 1%;
+            min-height: 3%;
+            background-color: var(--attendColor);
+            color: #000;
+            height: auto;
+            border: #888 solid 1px
+        }
+        .menu {
+            align-items: center;
+            color: #000;
+            background-color: var(--mainColor);
+            border-radius: 0 0 0 10px;
+            float: left;
+            width: 300px
+        }
+    .checkbox{
+        margin-top: 5%;
+        align-items: center;
+        zoom: 120%;
+    }
+
+    </style>
+        <title>672专用网站 by Zerofo</title>
+    </head>
+    <body>
+        <div id="webname" class="webname">672专用网站 by Zerofo</div>
+        <div id="ing" class="lines"></div>
+        <div>
+            <h2 id="msgs"></h2>
+        </div>
+        <!-- <div id="hiddenmenu4" class="hiddenmenu">
+            <div id="pltable4" style="background-color: white;">
+                <div id='ps4dumper' class="menudiv" onmouseover="display('APP2USB');" onmouseout="display('');" onclick="loader('payload/App2USB.bin');">APP2USB</div>
+                <div id='ps4dumper' class="menudiv" onmouseover="display('dumper, dump游戏');" onmouseout="display('');" onclick="loader('payload/Dumper.bin');">Dumper</div>
+                <div id='ps4ftp' class="menudiv" onmouseover="display('FTP插件(port:1337), 可连接多次')" onmouseout="display('');" onclick="loader('payload/FTP.bin');">FTP(持续)</div>
+                <div id='ps4History-Blocker' class="menudiv" onmouseover="display('浏览器历史页面屏蔽')" onmouseout="display('');" onclick="loader('payload/History-Blocker.bin');">历史页面屏蔽</div>
+                <div id='ps4Enable-Browser' class="menudiv" onmouseover="display('强制开启浏览器')" onmouseout="display('');" onclick="loader('payload/Enable-Browser.bin');">开启浏览器</div>
+                <div id='ps4Disable-Updates' class="menudiv" onmouseover="display('屏蔽系统更新')" onmouseout="display('');" onclick="loader('payload/Disable-Updates.bin');">屏蔽系统更新</div>
+
+                <div id='ps4Disable-Updates' class="menudiv" onmouseover="display('开启系统更新')" onmouseout="display('');" onclick="loader('payload/Enable-Updates.bin');">开启系统更新</div>
+                <div id='ps4Kernel-Dumper' class="menudiv" onmouseover="display('内核Dumper')" onmouseout="display('');" onclick="loader('payload/Kernel-Dumper.bin');">内核Dumper</div>
+                <div id='ps4Restore' class="menudiv" onmouseover="display('还原用户配置(如游戏), 非存档')" onmouseout="display('');" onclick="loader('payload/Restore.bin');">还原用户配置</div>
+                <div id='ps4Backup' class="menudiv" onmouseover="display('备份用户配置(如游戏), 非存档')" onmouseout="display('');" onclick="loader('payload/Backup.bin');">备份用户配置</div>
+                <div id='ps4RIF-Renamer' class="menudiv" onmouseover="display('RIF证书重命名(MIRA 转 HEN)')" onmouseout="display('');" onclick="loader('payload/RIF-Renamer.bin');">RIF证书重命名</div>
+                <div id='ps4Kernel-Clock' class="menudiv" onmouseover="display('内核时钟校正')" onmouseout="display('');" onclick="loader('payload/Kernel-Clock.bin');">内核时钟</div>
+            </div>
+        </div> -->
+        
+        <div style="display:inline-block; margin: 1% 1% 1% 1%;">
+            <div id="_HEN" class="button _HEN" onclick="run();" >一键JB</div>
+        </div>
+            
+            <div class="checkbox" >
+            <label>
+                <input type="checkbox"  id="chk" style="zoom: 180%;" value="1">自动JB</input>
+            </label>
+        </div>
+        <div id="footer">
+            ps4jb:
+            <a href="https://github.com/sleirsgoevy"> sleirsgoevy </a>
+            Goldhen:
+            <a href="https://github.com/SiSTR0"> SiSTR0 </a>
+            
+            <hr> 网站 仅用于 个人交流学习. 不以此牟利, 亦未因此获取任何利益. <br> 您支付的任何费用与本人无关.
+        </div>
+
+    </body>
+    <script>
+        let autojb_status = localStorage.getItem("autojb_status")||0;
+        var chkStatus = autojb_status==1?1:0
+        var checkBox = document.getElementById("chk");
+        checkBox.checked = chkStatus==1?1:false;
+        checkBox.addEventListener("change",()=>{
+            var chkStatus = checkBox.checked?1:0
+            localStorage.setItem("autojb_status", chkStatus);
+        })
+    </script>
+    <script src="loader.js"></script>
+    
+    <script src="webkit.js"></script>
+ 
+    </html>
